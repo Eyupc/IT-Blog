@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/BlogPost.astro";
 import type { GetStaticPaths } from "astro";
@@ -17,9 +18,9 @@ export const getStaticPaths = (async () => {
 import type { CollectionEntry } from "astro:content";
 
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
-const { Content } = await post.render();
+const Content = post.render ? await post.render() : null;
 ---
 
 <Layout frontmatter={post.data}>
-  <Content />
+  {Content && <Content.Content />}
 </Layout>
