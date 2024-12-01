@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Search } from './Search';
@@ -10,7 +9,6 @@ type NavLink = {
 };
 
 export const Navbar: React.FC = () => {
-  // Initialize state with undefined to prevent hydration mismatch
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { isDarkMode, toggleDarkMode, mounted } = useDarkMode();
 
@@ -25,7 +23,6 @@ export const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
 
-  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -37,7 +34,6 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Don't render anything until mounted to prevent hydration mismatch
   if (!mounted) return null;
 
   return (
