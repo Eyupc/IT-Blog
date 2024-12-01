@@ -9,7 +9,6 @@ interface BlogPost {
     description: string;
     image?: string;
     category?: string;
-    readingTime: number;
   };
 }
 
