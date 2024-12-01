@@ -1,16 +1,6 @@
-# Astro Starter Kit: Basics
+# IT Blog
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+This is an IT Blog built with Astro, a modern static site generator. The blog covers various topics including data science, design, and programming. The project is designed to be fast, flexible, and easy to maintain.
 
 ## 🚀 Project Structure
 
@@ -21,28 +11,84 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── components/
+│   │   ├── BlogPostList.tsx
+│   │   ├── Comments.tsx
+│   ├── content/
+│   │   ├── blog/
+│   │   │   ├── data-science/
+│   │   │   │   └── *.md
+│   │   │   ├── design/
+│   │   │   │   ├── *.md
+│   │   │   ├── programming/
+│   │   │   │   └── *.md
 │   ├── layouts/
+│   │   ├── BlogPost.astro
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   │   ├── [category]/
+│   │   │   └── [slug].astro
+│   │   ├── data-science.astro
+│   │   ├── design.astro
+│   │   ├── index.astro
+│   │   └── programming.astro
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📚 Blog Content
 
-## 🧞 Commands
+The blog content is organized into categories such as data science, design, and programming. Each category has its own folder under `src/content/blog/`.
 
-All commands are run from the root of the project, from a terminal:
+## 🛠️ Components
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The project includes several reusable components such as `BlogPostList` and `Comments`. These components are located in the `src/components/` directory.
 
-## 👀 Want to learn more?
+## 📄 Layouts
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The project uses layout components to structure the pages. The main layouts are `BlogPost.astro` and `Layout.astro`, located in the `src/layouts/` directory.
+
+## 🏃‍♂️ Running the Project
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```sh
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+
+4. **Open your browser and navigate to:**
+   ```
+   http://localhost:4321
+   ```
+
+## 📦 Building for Production
+
+To build the project for production, run:
+
+```sh
+npm run build
+```
+
+The built files will be located in the `./dist/` directory.
+
+## 🔍 Previewing the Build
+
+To preview the built site locally, run:
+
+```sh
+npm run preview
+```
+
+This will start a local server to preview the production build.
+
