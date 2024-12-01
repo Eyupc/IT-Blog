@@ -2,18 +2,12 @@
 import Layout from "./Layout.astro";
 import { Comments } from "../components/Comments";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, readingTime } = Astro.props;
 const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
-
-const readingTime = (text: string) => {
-  const wordsPerMinute = 200;
-  const words = text.split(/\s+/).length;
-  return Math.ceil(words / wordsPerMinute);
-};
 ---
 
 <Layout title={frontmatter.title}>
@@ -43,7 +37,7 @@ const readingTime = (text: string) => {
             <div class="flex items-center space-x-4 text-gray-200">
               <time class="text-sm">{formattedDate}</time>
               <span class="text-sm">•</span>
-              <span class="text-sm">10 min read</span>
+              <span class="text-sm">{readingTime} min read</span>
             </div>
           </div>
         </div>

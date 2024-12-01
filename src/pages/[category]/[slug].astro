@@ -19,8 +19,14 @@ import type { CollectionEntry } from "astro:content";
 
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 const Content = post.render ? await post.render() : null;
+
+const readingTime = (text: string) => {
+  const wordsPerMinute = 50;
+  const words = text.split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
+};
 ---
 
-<Layout frontmatter={post.data}>
+<Layout frontmatter={post.data} readingTime={readingTime(post.body)}>
   {Content && <Content.Content />}
 </Layout>

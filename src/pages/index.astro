@@ -8,6 +8,12 @@ const sortedPosts = allPosts.sort(
   (a: { data: { date: string } }, b: { data: { date: string } }) =>
     new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
+
+const readingTime = (text: string) => {
+  const wordsPerMinute = 200;
+  const words = text.split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
+};
 ---
 
 <Layout title="IT Blog - Home">
@@ -20,6 +26,7 @@ const sortedPosts = allPosts.sort(
         date: post.data.date,
         description: post.data.description,
         image: post.data.image,
+        readingTime: 2,
       },
     }))}
   />
