@@ -1,6 +1,6 @@
 # IT Blog
 
-This is an IT Blog built with Astro, a modern static site generator. The blog covers various topics including data science, design, and programming. The project is designed to be fast, flexible, and easy to maintain.
+This is an IT Blog built with Astro, a modern static site generator, **created for learning purposes**. The blog covers various topics, including data science, design, and programming. The project is designed to be fast, flexible, and easy to maintain.
 
 ## 🚀 Project Structure
 
