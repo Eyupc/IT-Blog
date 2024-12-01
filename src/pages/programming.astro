@@ -4,14 +4,16 @@ import { BlogPostList } from "../components/BlogPostList";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
-const sortedPosts = allPosts.sort(
-  (a: { data: { date: string } }, b: { data: { date: string } }) =>
-    new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+const programmingPosts = allPosts.filter(
+  (post) => post.data.category === "programming"
+);
+const sortedPosts = programmingPosts.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 ---
 
-<Layout title="IT Blog - Home">
-  <h1 class="text-4xl font-bold mb-8">Welcome to IT Blog</h1>
+<Layout title="IT Blog - Programming">
+  <h1 class="text-4xl font-bold mb-8">Programming</h1>
   <BlogPostList
     posts={sortedPosts.map((post) => ({
       url: `/${post.data.category}/${post.slug.split("/")[1]}`,
