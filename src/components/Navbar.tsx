@@ -52,7 +52,6 @@ export const Navbar: React.FC = () => {
           IT Blog
         </a>
 
-        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-6">
           {NavLinks.map((link) => (
             <li key={link.href}>
@@ -66,7 +65,6 @@ export const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        {/* Actions */}
         <div className="flex items-center space-x-4">
         <Search />
         <button 
@@ -83,7 +81,6 @@ export const Navbar: React.FC = () => {
           )}
         </button>
 
-          {/* Mobile Menu Button */}
           <button 
             onClick={toggleMenu}
             className="md:hidden text-gray-600 dark:text-gray-300
@@ -100,7 +97,6 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[57px]
                        backdrop-blur-md z-40">

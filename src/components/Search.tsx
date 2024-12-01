@@ -35,11 +35,11 @@ export const Search: React.FC = () => {
 
     const posts = await getCollection('blog');
     const searchResults = posts
-      .filter(post => {
+      .filter((post) => {
         const searchContent = `${post.data.title} ${post.data.description}`.toLowerCase();
         return searchContent.includes(searchQuery.toLowerCase());
       })
-      .map(post => ({
+      .map((post:any) => ({
         title: post.data.title,
         description: post.data.description,
         url: `/${post.data.category}/${post.slug.split('/')[1]}`,
